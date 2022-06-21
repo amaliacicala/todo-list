@@ -1,0 +1,311 @@
+/* --------- MANROPE FONT IMPORT --------- */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+/* --------- RESET --------- */
+* {
+    color: var(--secondary);
+    font-family: Manrope;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+    font-size: 12px;
+    height: 100%;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.3;
+}
+ol, ul {
+	list-style: none;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* --------- ROOT VARIABLES --------- */
+:root {
+    --primary: #f2eee3;
+    --secondary: #343434;
+    --tertiary: #4c4c4c;
+    --lilac: #b9a1cf;
+    --orange: #e16e55;
+}
+
+/* --------- LAYOUT --------- */
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    width: 100vw;
+    height: 100%;
+    background: rgb(185,161,207);
+    background: linear-gradient(160deg, var(--lilac) 25%, var(--orange) 90%);
+    background-attachment: fixed;
+}
+
+#root {
+    height: 100%;
+}
+
+main {
+    height: 95%;
+    overflow: scroll;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: var(--primary);
+    box-shadow: inset 20px 20px 60px #cecac1, inset -20px -20px 60px #ffffff;
+}
+
+/* --------- ADD TODO --------- */
+#new-task {
+    width: 110%;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    height: 2rem;
+    font-size: 1.4rem;
+    width: 70%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 0.2rem solid var(--lilac);
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="text"]:focus {
+    border-bottom: 0.2rem solid var(--orange);
+}
+
+input[type="text"]:active, input[type="text"]:valid {
+    background-color: transparent;
+}
+
+#add-task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--tertiary);
+    border: 0.1rem solid var(--lilac);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#add-task:hover {
+    background-color: rgba(225,110,85,0.1);
+}
+
+#add-task i {
+    font-size: 0.8rem;
+    color: var(--tertiary);
+}
+
+/* --------- TODO LIST --------- */
+#task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 3rem;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: auto;
+    width: 90%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    word-break: break-word;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.task-container:nth-child(even) {
+    background-color: rgba(225,110,85,0.2);
+}
+
+.task-container:nth-child(odd) {
+    background-color: rgba(185,161,207,0.3);
+}
+
+.empty h3 {
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+#task {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.task-name {
+    max-width: 92%;
+}
+
+input[type="checkbox"] {
+    border: 0.1rem solid var(--lilac);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--primary);
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked::after {
+    content: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><style>.check-svg{fill: rgba(225,110,85,1);}</style><path class="check-svg" d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z"/></svg>');
+    display: block;
+    width: 1rem;
+    margin: 15% auto;
+}
+
+.strike {
+    text-decoration: line-through var(--orange);
+    color: #4c4c4c;
+}
+
+.error {
+    font-size: 1rem;
+    margin: 1rem 5.5rem 0;
+    color: var(--orange);
+}
+
+.delete-task {
+    padding: 0.5rem 1rem;
+    border: 0.1rem solid var(--lilac);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.delete-task:hover {
+    background-color: rgba(225,110,85,0.1);
+}
+
+.delete-task i {
+    font-size: 1rem;
+    color: var(--tertiary);
+}
+
+/* --------- FOOTER --------- */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    justify-self: flex-end;
+    text-align: center;
+    font-family: Manrope;
+    width: 100%;
+    height: 5%;
+    border-top: solid 0.2px var(--orange);
+    background-color: var(--primary);
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 0;
+}
+
+footer i {
+    color: var(--orange);
+    margin: 0 0.2rem;
+}
+
+footer a {
+    text-decoration: underline wavy 1.2px var(--orange);
+    transition: all 0.2s ease-in-out;
+}
+
+footer a:hover {
+    text-decoration: underline wavy 1.2px transparent;
+    color: var(--orange);
+}
+
+/* --------- SMALL AND MEDIUM SCREENS QUERY --------- */
+@media screen and (max-width: 821px) {
+    .container {
+        width: 80%;
+    }
+    .error {
+        margin: 1rem 1.5rem 0;
+    }
+    input[type="text"] {
+        font-size: 1.3rem;
+        width: 60%;
+    }
+    #task-list {
+        width: 110%;
+    }
+    .task-name {
+        max-width: 82%;
+    }
+}
